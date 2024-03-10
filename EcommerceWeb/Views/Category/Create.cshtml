@@ -6,7 +6,7 @@
             <h2>Create Category</h2>
             <hr />
         </div>
-        <div asp-validation-summary="All"></div>
+        @* <div asp-validation-summary="All"></div> *@
         <div class="mb-3">
             <label asp-for="Name" class="form-label"></label>
             <input asp-for="Name" class="form-control" />
@@ -15,9 +15,15 @@
         <div class="mb-3">
             <label asp-for="DisplayOrder" class="form-label"></label>
             <input asp-for="DisplayOrder" class="form-control" />
-            <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+            <span asp-validation-for="DisplayOrder" class="text-danger"></span> 
         </div>
         <button type="submit" class="btn btn-dark">Add Category</button>
         <a asp-controller="Category" asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
     </div>
 </form>
+
+@section Scripts {
+    @{
+    <partial name="_ValidationScriptsPartial.cshtml" />
+    }
+}

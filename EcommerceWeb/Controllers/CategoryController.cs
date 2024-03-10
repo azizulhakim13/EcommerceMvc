@@ -30,6 +30,11 @@ namespace EcommerceWeb.Controllers
                 ModelState.AddModelError("name", "The DisplayOrder cannot exactly match the same.");
             }
 
+            //if (obj.Name == "test")
+            //{
+            //    ModelState.AddModelError("", "Test is a invalid value");
+            //}
+
             if (ModelState.IsValid)
             {
                 _db.Categories.Add(obj);
