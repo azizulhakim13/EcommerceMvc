@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EcommerceWeb.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240305112623_SeedCategoryTable")]
+    [Migration("20240321064349_SeedCategoryTable")]
     partial class SeedCategoryTable
     {
         /// <inheritdoc />
@@ -26,39 +26,40 @@ namespace EcommerceWeb.Migrations
 
             modelBuilder.Entity("EcommerceWeb.Models.Category", b =>
                 {
-                    b.Property<int>("CategoryId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("DisplayOrder")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
-                    b.HasKey("CategoryId");
+                    b.HasKey("Id");
 
                     b.ToTable("Categories");
 
                     b.HasData(
                         new
                         {
-                            CategoryId = 1,
+                            Id = 1,
                             DisplayOrder = 1,
                             Name = "Action"
                         },
                         new
                         {
-                            CategoryId = 2,
+                            Id = 2,
                             DisplayOrder = 2,
                             Name = "SciFi"
                         },
                         new
                         {
-                            CategoryId = 3,
+                            Id = 3,
                             DisplayOrder = 3,
                             Name = "History"
                         });
