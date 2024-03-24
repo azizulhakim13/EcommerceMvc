@@ -1,6 +1,9 @@
-﻿using EcommerceWeb.Models;
+﻿
+using Bulky.Models;
 using Microsoft.EntityFrameworkCore;
-namespace EcommerceWeb.Data
+
+
+namespace Bulky.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext
     {

@@ -1,26 +1,27 @@
 ﻿@model Category
 
-<form method="post">
-    <div class="border p-3 mt-4">
-        <div class="row pb-2">
-            <h2>Create Category</h2>
-            <hr />
-        </div>
-        @* <div asp-validation-summary="All"></div> *@
-        <div class="mb-3">
-            <label asp-for="Name" class="form-label"></label>
-            <input asp-for="Name" class="form-control" />
-            <span asp-validation-for="Name" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="DisplayOrder" class="form-label"></label>
-            <input asp-for="DisplayOrder" class="form-control" />
-            <span asp-validation-for="DisplayOrder" class="text-danger"></span> 
-        </div>
-        <button type="submit" class="btn btn-dark">Add Category</button>
-        <a asp-controller="Category" asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+<div class="rounded shadow">
+    <div class="py-4 bg-success rounded-top">
+        <h2 class="text-white text-center">Create Category</h2>
     </div>
-</form>
+    <form method="post" class="p-3">
+        <div class="border p-3">
+            @* <div asp-validation-summary="All"></div> *@
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div> 
+            <div class="mb-3">
+                <label asp-for="DisplayOrder" class="form-label"></label>
+                <input asp-for="DisplayOrder" class="form-control" />
+                <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-dark">Add Category</button>
+            <a asp-controller="Category" asp-action="Index" class="btn btn-outline-secondary">Back to List</a> 
+        </div>
+    </form>
+</div>
 
 @section Scripts {
     @{
